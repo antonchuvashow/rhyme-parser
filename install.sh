@@ -15,13 +15,10 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-git clone https://github.com/antonchuvashow/rhyme-parser
-cd rhymezone-website
-
 if [ "$INCLUDE_ADMINER" = true ]; then
-    docker-compose up --build -d
+    docker-compose up
 else
-    docker-compose up --build -d db web
+    docker-compose up db web
 fi
 
 echo "Rhymezone Website has been successfully set up."

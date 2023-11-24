@@ -19,11 +19,11 @@ Before you begin, ensure that you have Docker installed on your machine.
     ```
 
 2. **Run the install.sh script**:
-    - With this script, users can run the project without Adminer by default. 
+    - With this script, you can run the project without Adminer by default. 
     ```bash
     ./install.sh
     ```
-    However, if they want to include Adminer, they can use the `--with-adminer` option:
+    However, if you want to include Adminer, you can use the `--with-adminer` option:
 
     ```bash
     sudo chmod +x ./install.sh
