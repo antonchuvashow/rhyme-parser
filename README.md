@@ -14,7 +14,7 @@ Before you begin, ensure that you have Docker installed on your machine.
 1. **Clone the repository**:
 
     ```bash
-    git clone https://github.com/your-username/rhyme-parser.git
+    git clone https://github.com/antonchuvashow/rhyme-parser
     cd rhyme-parser
     ```
 
@@ -49,7 +49,7 @@ If you prefer a more flexible setup without Docker Compose, you can manually bui
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/rhyme-parser.git
+    git clone https://github.com/antonchuvashow/rhyme-parser
     cd rhyme-parser
     ```
 
