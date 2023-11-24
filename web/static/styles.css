@@ -1,0 +1,111 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+
+form {
+    width: 100%;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-family: 'Jomhuria', sans-serif;
+    font-size: 96px;
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+.search-bar {
+    background: #F5F5F5;
+    border-radius: 1.7rem;
+    display: flex;
+    align-self: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.search-input {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #F5F5F5;
+    font-size: 16px;
+    font-style: italic;
+    outline: none;
+    width: 100%;
+}
+
+/* main page word cloud */
+
+#word-cloud-container {
+    margin-top: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.words {
+    cursor: pointer;
+}
+
+.text-title {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.top-searches {
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 10vh;
+}
+
+#cards-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+}
+
+.card {
+    width: 200px;
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="cards-container"></div>
+
+<script>
+    // JSON data
+    var jsonData = {{rhymes | safe }}
+    jsonData.shift()
+</script>
+ <script src="{{ url_for('static', filename='rhymes.js') }}"></script>
+
+
+{% endblock %}

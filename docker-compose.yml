@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test123
+    ports:
+      - "5432:5432"
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    environment:
+      FLASK_SECRET: really_secret_key_close_your_eyes
+      DB_USERNAME: test
+      DB_PASSWORD: test123
+      DB_HOST: db
+      DB_PORT: 5432
+    depends_on:
+      - db
+    ports:
+      - "80:3000"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
