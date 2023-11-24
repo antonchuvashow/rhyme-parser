@@ -1,4 +1,8 @@
 # Rhyme Parser
+
+https://github.com/antonchuvashow/rhyme-parser/assets/54022438/e5beb18f-686a-4d55-8669-cdba48941320
+
+
 ## Project Overview
 
 This project is a web application built with Flask and using PostgreSQL as the database. It allows users to search for rhymes. Please note that this is a **learning project**, and the rhymes are parsed from **Rhymezone**, so be mindful of their license.
