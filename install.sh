@@ -16,9 +16,9 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [ "$INCLUDE_ADMINER" = true ]; then
-    docker-compose up
+    docker-compose up -d --quiet-pull
 else
-    docker-compose up db web
+    docker-compose up -d --quiet-pull web
 fi
 
 echo "Rhymezone Website has been successfully set up."
