@@ -1,11 +1,12 @@
 import os
 
+import requests
 from flask import Flask, render_template
 
 from db_models.words import Word
 from db_models.db_session import db
-from utils.scraper import get_rhymes, get_most_popular_words
-from web.forms.search import SearchForm
+from utils.statistics import get_most_popular_words
+from forms.search import SearchForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv("FLASK_SECRET")
@@ -19,13 +20,17 @@ app.config['SQLALCHEMY_DATABASE_URI'] = ('postgresql+psycopg2://' +
 # Very bad line of code, but we live in Russia, so...
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
-
+with app.app_context():
+    db.create_all()
 
 @app.route("/", methods=["POST", "GET"])
 def main_page():
     search = SearchForm()
     if search.validate_on_submit():
-        rhymes = get_rhymes(search.name.data)
+
+        api_url = "http://scrapy:2209/crawl"
+        rhymes = requests.post(api_url, json={"word": search.name.data}).json()['message']
+
         word = Word.query.filter_by(word=search.name.data.lower()).first()
         if word:
             word.frequency += 1

@@ -10,6 +10,13 @@ services:
     ports:
       - "5432:5432"
 
+  scrapy:
+    build:
+      context: ./parser
+      dockerfile: Dockerfile
+    ports:
+      - "2209:2209"
+
   web:
     build:
       context: ./web
@@ -22,6 +29,7 @@ services:
       DB_PORT: 5432
     depends_on:
       - db
+      - scrapy
     ports:
       - "80:3000"
 

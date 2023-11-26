@@ -1,4 +1,4 @@
-from db_session import db
+from db_models.db_session import db
 
 
 class Word(db.Model):
@@ -8,7 +8,3 @@ class Word(db.Model):
 
     def __repr__(self):
         return f'<Word {self.id} {self.word} {self.frequency}>'
-
-
-with app.app_context():
-    db.create_all()

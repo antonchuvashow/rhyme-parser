@@ -1,6 +1,8 @@
 FROM python:3.11-alpine
 LABEL authors="antonchuvashov"
+
 WORKDIR /app
+
 COPY requirements.txt requirements.txt
 
 RUN pip3 install wheel setuptools pip --upgrade
