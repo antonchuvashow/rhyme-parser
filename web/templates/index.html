@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="top-searches">
-    <div id="word-cloud-container"></div>
-    <script>
-        var top_searches = {{ words | safe }}
-    </script>
-    <script src="{{ url_for('static', filename='base.js') }}"></script>
-</div>
+    <div class="top-searches">
+        <div id="word-cloud-container"></div>
+        <script>
+            var top_searches = {{ words | safe }}
+        </script>
+        <script src="{{ url_for('static', filename='base.js') }}"></script>
+    </div>
 
 {% endblock %}

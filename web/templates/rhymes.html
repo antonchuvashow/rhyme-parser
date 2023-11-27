@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<div id="cards-container"></div>
+    <div id="cards-container"></div>
 
-<script>
-    // JSON data
-    var jsonData = {{rhymes | safe }}
-    jsonData.shift()
-</script>
- <script src="{{ url_for('static', filename='rhymes.js') }}"></script>
+    <script>
+        // JSON data
+        var jsonData = {{rhymes | safe }}
+            jsonData.shift()
+    </script>
+    <script src="{{ url_for('static', filename='rhymes.js') }}"></script>
 
 
 {% endblock %}

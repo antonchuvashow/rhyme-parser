@@ -1,12 +1,13 @@
 import os
 
 import requests
+import sqlalchemy
 from flask import Flask, render_template
 
-from db_models.words import Word
 from db_models.db_session import db
-from utils.statistics import get_most_popular_words
+from db_models.words import Word
 from forms.search import SearchForm
+from utils.statistics import get_most_popular_words
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv("FLASK_SECRET")
@@ -21,7 +22,13 @@ app.config['SQLALCHEMY_DATABASE_URI'] = ('postgresql+psycopg2://' +
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 with app.app_context():
-    db.create_all()
+    while True:
+        try:
+            db.create_all()
+            break
+        except sqlalchemy.exc.OperationalError:
+            pass
+
 
 @app.route("/", methods=["POST", "GET"])
 def main_page():

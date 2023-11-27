@@ -12,10 +12,11 @@ function createProgressBar(value, maxValue) {
     progressBar.value = value;
     return progressBar;
 }
+
 function createLogProgressBar(value, maxValue) {
     var progressBar = document.createElement('progress');
-    progressBar.max = Math.log10(maxValue *10000 + 1);
-    progressBar.value = Math.log10(value*10000 + 1);
+    progressBar.max = Math.log10(maxValue * 10000 + 1);
+    progressBar.value = Math.log10(value * 10000 + 1);
     return progressBar;
 }
 
